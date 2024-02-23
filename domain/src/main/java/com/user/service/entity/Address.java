@@ -3,6 +3,7 @@ package com.user.service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @ToString
