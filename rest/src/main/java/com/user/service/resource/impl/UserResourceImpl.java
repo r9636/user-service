@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/user")
 @RequiredArgsConstructor
@@ -29,5 +31,10 @@ public class UserResourceImpl implements UserResource {
     @GetMapping(path = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResponseDTO> retrieveUser(@PathVariable String userId) {
         return ResponseEntity.ok(userService.getUser(userId));
+    }
+
+    @Override
+    public ResponseEntity<List<UserResponseDTO>> retrieveAllUsers() {
+         return ResponseEntity.ok(userService.getUsers());
     }
 }

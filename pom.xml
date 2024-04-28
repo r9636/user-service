@@ -19,9 +19,6 @@
 	<name>user-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<spring.boot.mainclass>UserServiceApplication</spring.boot.mainclass>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -40,33 +37,4 @@
 			<version>2.0.2</version>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>repackage</id>
-							<goals>
-								<goal>repackage</goal>
-							</goals>
-							<configuration>
-								<excludes>
-									<exclude>
-										<groupId>org.projectlombok</groupId>
-										<artifactId>lombok</artifactId>
-									</exclude>
-								</excludes>
-								<mainClass>${spring.boot.mainclass}</mainClass>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
 </project>

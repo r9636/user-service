@@ -45,4 +45,9 @@ public class UserServiceImpl implements UserService {
         }
        return modelMapper.map(user.get(), UserResponseDTO.class);
     }
+
+    @Override
+    public List<UserResponseDTO> getUsers() {
+        return userRepo.findAll().stream().map(user -> modelMapper.map(user, UserResponseDTO.class)).collect(Collectors.toList());
+    }
 }
